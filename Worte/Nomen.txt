@@ -1,0 +1,12 @@
+servus#serv#o#m#der Sklave, der Diener
+domina#domin#a#f#die Herrin, die Dame
+serva#serv#a#f#die Sklavin, die Dienerin
+dominus#domin#o#m#der Herr
+equus#equ#o#m#das Pferd
+populus#popul#o#m#das Volk
+victoria#victori#a#f#der Sieg
+medicus#medic#o#m#der Arzt
+templum#templ#o#n#der Tempel
+victor#victor#dr#m#der Sieger
+pars#part#dr#fE#der Teil, die Seite
+dies#di#e#m#der Tag

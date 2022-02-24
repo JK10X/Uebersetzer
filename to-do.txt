@@ -1,0 +1,16 @@
+-Eintrag in Programm (Pygame) 
+-Adverben
+-Adjektive
+-Unregelmässige Verben (esse, velle, nolle)
+-PPP u PPA
+-Gerundiv
+-Imperfekt 2
+.Präpositionen
+-KONJUNKTIV!!!!
+
+Done:
+output: Nomen
+formenliste: Nomen
+-Nomen: Form erkennen
+-Verben: alle: Indikativ, Aktiv((Infinitiv)Präsens, Imperfekt, Futur, Imperativ 1), Passiv(Präsens, Imperfekt, Futur)
+
