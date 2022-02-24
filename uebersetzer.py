@@ -912,4 +912,4 @@ setup()
 main()
 funktionrepeat(repeat)
 
-print("tets")
+sys.exit()
