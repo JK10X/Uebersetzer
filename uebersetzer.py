@@ -912,4 +912,4 @@ setup()
 main()
 funktionrepeat(repeat)
 
-sys.exit()
+print("test")
