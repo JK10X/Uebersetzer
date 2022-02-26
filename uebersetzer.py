@@ -151,7 +151,7 @@ def main():
             if Wort == NomenNominativ: #Nominativ
                 if form != "":
                         form = form+" or "
-                form = "Nomen#"+NomenZeile[0]+"#"+NomenZeile[2]+"#"+NomenZeile[3]+"#Nominativ#Singular"
+                form = f"Nomen#{NomenZeile[0]}#{NomenZeile[2]}#{NomenZeile[3]}Nominativ#Singular"
 
                 if output != "":
                         output = output+" or "
@@ -159,8 +159,8 @@ def main():
 
                 print(Wort," = ",NomenZeile[4],"(Nominativ, Singular)")
 
-            x = 0
-            for Endung in NomenEndungen:
+
+            for x, Endung in enumerate(NomenEndungen):
                 allreadythere = 0
                 WortDekliniert = NomenZeile[1]+Endung
                 if Wort == WortDekliniert:
@@ -213,7 +213,6 @@ def main():
                         print(Wort, " = ", NomenZeile[4],end = "")
                         print(" (Vokativ, Singular)"),
 
-                x = x+1
 
 
         for VerbenZeile in VerbenListe: #Verben
@@ -224,8 +223,8 @@ def main():
 
             if VerbenZeile[4] == "a": #a-Konjugation
 
-                for Endung in präsens: #Präsens, Aktiv
-                    if Endung == "o":
+                for Endungsnummer, Endung in enumerate(präsens): #Präsens, Aktiv
+                    if Endungsnummer == 0:
                         vokabelKonjugiert = VerbenZeile[1]+Endung
                         if Wort == vokabelKonjugiert:  
                             print("1.#Singular#Präsens#Aktiv#Indikativ von ",VerbenZeile[5])
@@ -262,39 +261,30 @@ def main():
                         if Endung == "ntur":
                             print("3.#Plural#Präsens#Passiv#Indikativ von ",VerbenZeile[5])
 
-                for Endung in imperfekt: #Imperfekt, Aktiv; Präsens/Imperfekt, Aktiv, Konjuktiv:
-                    for Bindung,KonjPrä, in ["aba","Imperfekt#Aktiv#Indikativ"],["e","Präsens#Aktiv#Konkunktiv"],["are","Imperfekt#Aktiv#Konjuktiv"]:
+                for Endungsnummer, Endung in enumerate(imperfekt): #Imperfekt, Aktiv; Präsens/Imperfekt, Aktiv, Konjuktiv:
+                    for Bindung,KonjPrä in ["aba","Imperfekt#Aktiv#Indikativ"],["e","Präsens#Aktiv#Konkunktiv"],["are","Imperfekt#Aktiv#Konjuktiv"]:
+                        if Endungsnummer == 0 or Endungsnummer == 1 or Endungsnummer == 2:
+                            Nummerus = "Singular"
+                            Person = Endungsnummer+1
+                        else:
+                            Nummerus = "Plural"
+                            Person = Endungsnummer-2
                         vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
                         if Wort == vokabelKonjugiert:
-                            if Endung == "m":
-                                print("1.#Singular#"+KonjPrä+" von ",VerbenZeile[5])                
-                            if Endung == "s":
-                                print("2.#Singular#"+KonjPrä+" von ",VerbenZeile[5])
-                            if Endung == "t":
-                                print("3.#Singular#"+KonjPrä+" von ",VerbenZeile[5])
-                            if Endung == "mus":
-                                print("1.#Plural#"+KonjPrä+" von ",VerbenZeile[5])
-                            if Endung == "tis":
-                                print("2.#Plural#"+KonjPrä+" von ",VerbenZeile[5])
-                            if Endung == "nt":
-                                print("3.#Plural#"+KonjPrä+" von ",VerbenZeile[5])
+                            print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
-                for Endung in passiv: #Imperfekt, Passiv; Präsens/Imperfekt, Passiv, Konjuktiv:
-                    for Bindung,KonjPrä, in ["aba","Imperfekt#Passiv#Indikativ"],["e","Präsens#Passiv#Konkunktiv"],["are","Imperfekt#Passiv#Konjuktiv"]:
+                for Endungsnummer, Endung in enumerate(passiv): #Imperfekt, Passiv; Präsens/Imperfekt, Passiv, Konjuktiv:
+                    for Bindung,KonjPrä in ["aba","Imperfekt#Passiv#Indikativ"],["e","Präsens#Passiv#Konkunktiv"],["are","Imperfekt#Passiv#Konjuktiv"]:
+                        if Endungsnummer == 0 or Endungsnummer == 1 or Endungsnummer == 2:
+                            Nummerus = "Singular"
+                            Person = Endungsnummer+1
+                        else:
+                            Nummerus = "Plural"
+                            Person = Endungsnummer-2
                         vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
                         if Wort == vokabelKonjugiert:
-                            if Endung == "r": 
-                                print("1.#Singular#"+KonjPrä+" von ",VerbenZeile[5])                
-                            if Endung == "ris":
-                                print("2.#Singular#"+KonjPrä+" von ",VerbenZeile[5])
-                            if Endung == "tur":
-                                print("3.#Singular#"+KonjPrä+" von ",VerbenZeile[5])
-                            if Endung == "mur":
-                                print("1.#Plural#"+KonjPrä+" von ",VerbenZeile[5])
-                            if Endung == "mini":
-                                print("2.#Plural#"+KonjPrä+" von ",VerbenZeile[5])
-                            if Endung == "ntur":
-                                print("3.#Plural#"+KonjPrä+" von ",VerbenZeile[5])
+                            print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
+
 
                 for Endung in präsens: #Futur, Aktiv
                     if Endung == "o":
