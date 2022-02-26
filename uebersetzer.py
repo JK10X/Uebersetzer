@@ -222,36 +222,24 @@ def main():
                 print(Wort," = ","Infinitiv#Präsens#Aktiv von ",VerbenZeile[5])
 
             if VerbenZeile[4] == "a": #a-Konjugation
-
-                for Endungsnummer, Endung in enumerate(präsens): #Präsens, Aktiv
-                    KonjPrä = "Präsens#Aktiv#Indikativ"
-                    if Endungsnummer == 0 or Endungsnummer == 1 or Endungsnummer == 2:
-                            Nummerus = "Singular"
-                            Person = Endungsnummer+1
-                    else:
-                        Nummerus = "Plural"
-                        Person = Endungsnummer-2
-                    if Endungsnummer == 0:
-                        vokabelKonjugiert = VerbenZeile[1]+Endung
-                    else:
-                        vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
-                    if Wort == vokabelKonjugiert:
-                        print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
-
-                for Endungsnummer, Endung in enumerate(passiv): #Präsens, Passiv:
-                    KonjPrä = "Präsens#Passiv#Indikativ"
-                    if Endungsnummer == 0 or Endungsnummer == 1 or Endungsnummer == 2:
-                            Nummerus = "Singular"
-                            Person = Endungsnummer+1
-                    else:
-                        Nummerus = "Plural"
-                        Person = Endungsnummer-2
-                    if Endungsnummer == 0:
-                        vokabelKonjugiert = VerbenZeile[1]+"o"+Endung
-                    else:
-                        vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
-                    if Wort == vokabelKonjugiert:
-                        print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
+                for Endungsliste, PräoPas in [präsens, "Aktiv"], [passiv, "Passiv"]:
+                    for Endungsnummer, Endung in enumerate(Endungsliste): #Präsens, Aktiv
+                        KonjPrä = f"Präsens#{PräoPas}#Indikativ"
+                        if Endungsnummer == 0 or Endungsnummer == 1 or Endungsnummer == 2:
+                                Nummerus = "Singular"
+                                Person = Endungsnummer+1
+                        else:
+                            Nummerus = "Plural"
+                            Person = Endungsnummer-2
+                        if Endungsnummer == 0:
+                            if PräoPas == "Passiv":
+                                vokabelKonjugiert = VerbenZeile[1]+"o"+Endung
+                            else:
+                                vokabelKonjugiert = VerbenZeile[1]+Endung
+                        else:
+                            vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
+                        if Wort == vokabelKonjugiert:
+                            print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
                         
                             
                 for Endungsliste in [imperfekt, passiv]: #Imperfekt, Aktiv; Präsens/Imperfekt, Konjuktiv:
