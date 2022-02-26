@@ -6,3 +6,5 @@ data = response.read()
 data = data.decode()
  
 print(data)
+
+print("test")
