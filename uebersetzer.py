@@ -260,30 +260,20 @@ def main():
                             print("2.#Plural#Präsens#Passiv#Indikativ von ",VerbenZeile[5])
                         if Endung == "ntur":
                             print("3.#Plural#Präsens#Passiv#Indikativ von ",VerbenZeile[5])
+                for Endungsliste in [imperfekt, passiv]: #Imperfekt, Aktiv; Präsens/Imperfekt, Konjuktiv:
+                    for Endungsnummer, Endung in enumerate(Endungsliste):
+                        for Bindung,KonjPrä in ["aba","Imperfekt#Aktiv#Indikativ"],["e","Präsens#Aktiv#Konkunktiv"],["are","Imperfekt#Aktiv#Konjuktiv"]:
+                            if Endungsnummer == 0 or Endungsnummer == 1 or Endungsnummer == 2:
+                                Nummerus = "Singular"
+                                Person = Endungsnummer+1
+                            else:
+                                Nummerus = "Plural"
+                                Person = Endungsnummer-2
+                            vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
+                            if Wort == vokabelKonjugiert:
+                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
-                for Endungsnummer, Endung in enumerate(imperfekt): #Imperfekt, Aktiv; Präsens/Imperfekt, Aktiv, Konjuktiv:
-                    for Bindung,KonjPrä in ["aba","Imperfekt#Aktiv#Indikativ"],["e","Präsens#Aktiv#Konkunktiv"],["are","Imperfekt#Aktiv#Konjuktiv"]:
-                        if Endungsnummer == 0 or Endungsnummer == 1 or Endungsnummer == 2:
-                            Nummerus = "Singular"
-                            Person = Endungsnummer+1
-                        else:
-                            Nummerus = "Plural"
-                            Person = Endungsnummer-2
-                        vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
-                        if Wort == vokabelKonjugiert:
-                            print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
-                for Endungsnummer, Endung in enumerate(passiv): #Imperfekt, Passiv; Präsens/Imperfekt, Passiv, Konjuktiv:
-                    for Bindung,KonjPrä in ["aba","Imperfekt#Passiv#Indikativ"],["e","Präsens#Passiv#Konkunktiv"],["are","Imperfekt#Passiv#Konjuktiv"]:
-                        if Endungsnummer == 0 or Endungsnummer == 1 or Endungsnummer == 2:
-                            Nummerus = "Singular"
-                            Person = Endungsnummer+1
-                        else:
-                            Nummerus = "Plural"
-                            Person = Endungsnummer-2
-                        vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
-                        if Wort == vokabelKonjugiert:
-                            print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
 
                 for Endung in präsens: #Futur, Aktiv
