@@ -23,89 +23,17 @@ def ImportVerben():
     for Zeile in Verben:
         VerbenListe.append(Zeile.rstrip())
 def ImportEndungen():
-
-    omListe = []
-    om = open('Endungen/Nomen/om.txt','r')
-    for Zeile in om:
-        omListe.append(Zeile.rstrip())
-
-
-    onListe = []
-    on = open('Endungen/Nomen/on.txt','r')
-    for Zeile in on:
-        onListe.append(Zeile.rstrip())
-
-    afListe = []
-    af = open('Endungen/Nomen/af.txt','r')
-    for Zeile in af:
-        afListe.append(Zeile.rstrip())
-    
-    drmListe = []
-    drm = open('Endungen/Nomen/drm.txt','r')
-    for Zeile in drm:
-        drmListe.append(Zeile.rstrip())
-
-    drnListe = []
-    drn = open('Endungen/Nomen/drn.txt','r')
-    for Zeile in drn:
-        drnListe.append(Zeile.rstrip())
-    
-    umListe = []
-    um = open('Endungen/Nomen/drn.txt','r')
-    for Zeile in um:
-        umListe.append(Zeile.rstrip())
-
-    drniListe = []
-    drni = open('Endungen/Nomen/drni.txt','r')
-    for Zeile in drni:
-        drniListe.append(Zeile.rstrip())
-
-    drfListe = []
-    drf = open('Endungen/Nomen/drf.txt','r')
-    for Zeile in drf:
-        drfListe.append(Zeile.rstrip())
-
-    drmEListe = []
-    drmE = open('Endungen/Nomen/drmE.txt','r')
-    for Zeile in drmE:
-        drmEListe.append(Zeile.rstrip())
-
-    drfEListe = []
-    drfE = open('Endungen/Nomen/drfE.txt','r')
-    for Zeile in drfE:
-        drfEListe.append(Zeile.rstrip())
-
-    drnEListe = []
-    drnE = open('Endungen/Nomen/drnE.txt','r')
-    for Zeile in drnE:
-        drnEListe.append(Zeile.rstrip())
-
-    emListe = []
-    em = open('Endungen/Nomen/em.txt','r')
-    for Zeile in em:
-        emListe.append(Zeile.rstrip()) 
-
-    efListe = []
-    ef = open('Endungen/Nomen/ef.txt','r')
-    for Zeile in ef:
-        efListe.append(Zeile.rstrip()) 
-
     global Endungen
-    Endungen = {
-        "om" : omListe,
-        "on" : onListe,
-        "af" : afListe,
-        "drm" : drmListe,
-        "drn" : drnListe,
-        "um" : umListe,
-        "drni": drniListe,
-        "drf" : drfListe,
-        "drmE" : drmEListe,
-        "drfE" : drfEListe,
-        "drnE" : drnEListe,
-        "em" : emListe,
-        "ef" : efListe }
-    
+    Endungen = {}
+    for Dg in ["om","af","drf","drfE","drm","drmE","drn", "drnE", "drni", "ef", "em", "on", "um"]:
+        globals()[Dg+"Liste"] = []
+        globals()[Dg] = open('Endungen/Nomen/'+Dg+'.txt','r')
+
+        for Zeile in globals()[Dg]:
+            globals()[Dg+"Liste"].append(Zeile.rstrip())
+        
+        Endungen[Dg] = globals()[Dg+"Liste"]
+
     global präsens
     global imperfekt
     global perfect
@@ -222,8 +150,8 @@ def main():
                 print(Wort," = ","Infinitiv#Präsens#Aktiv von ",VerbenZeile[5])
 
             if VerbenZeile[4] == "a": #a-Konjugation
-                for Endungsliste, PräoPas in [präsens, "Aktiv"], [passiv, "Passiv"]:
-                    for Endungsnummer, Endung in enumerate(Endungsliste): #Präsens, Aktiv
+                for Endungsliste, PräoPas in [präsens, "Aktiv"], [passiv, "Passiv"]:#Präsens
+                    for Endungsnummer, Endung in enumerate(Endungsliste): 
                         KonjPrä = f"Präsens#{PräoPas}#Indikativ"
                         if Endungsnummer == 0 or Endungsnummer == 1 or Endungsnummer == 2:
                                 Nummerus = "Singular"
