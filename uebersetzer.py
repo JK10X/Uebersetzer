@@ -56,6 +56,13 @@ def setup():
     ImportNomen()
     ImportEndungen()
     ImportVerben()
+def outputFormSetupNomen(form,output):
+    if form != "": #mehrere bedeutung werden mit "or" gespeichert
+        form = form+" or "
+
+
+    if output != "": #mehrere bedeutung werden mit "or" gespeichert
+            output = output+" or "
 
 def main():
     global repeat
@@ -99,8 +106,8 @@ def main():
                     print(Wort ," = ", NomenZeile[4], end = "")
 
                     outputSplit = output.split(" or ")
-                    for outputInListe in outputSplit:
-                        if outputInListe == NomenZeile[4]:
+                    for IsoutputInListe in outputSplit:
+                        if IsoutputInListe == NomenZeile[4]:
                             allreadythere = 1
 
                     if output != "": #mehrere bedeutung werden mit "or" gespeichert
@@ -167,6 +174,9 @@ def main():
                         else:
                             vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
                         if Wort == vokabelKonjugiert:
+                            outputFormSetupNomen(form, output)
+                            form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                            output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
                                   
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
@@ -180,6 +190,9 @@ def main():
                                 Person = Endungsnummer-2
                             vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
+                                outputFormSetupNomen(form, output)
+                                form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                                output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
@@ -207,6 +220,9 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"abe"+Endung
                         
                         if Wort == vokabelKonjugiert:
+                                outputFormSetupNomen(form, output)
+                                form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                                output = VerbenZeile[5]                            
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
                                 
                 for Endung in imperativ: #Imperativ 1
@@ -239,6 +255,9 @@ def main():
                         else:
                             vokabelKonjugiert = VerbenZeile[1]+Endung
                         if Wort == vokabelKonjugiert:
+                            outputFormSetupNomen(form, output)
+                            form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                            output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
                             
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
@@ -252,6 +271,9 @@ def main():
                                 Person = Endungsnummer-2
                             vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
+                                outputFormSetupNomen(form, output)
+                                form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                                output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
@@ -279,7 +301,10 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"abe"+Endung
                         
                         if Wort == vokabelKonjugiert:
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
+                            outputFormSetupNomen(form, output)
+                            form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                            output = VerbenZeile[5]
+                            print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endung in imperativ: #imperativ 1
                     vokabelKonjugiert = VerbenZeile[1]+Endung
@@ -312,6 +337,9 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"u"+Endung
 
                         if Wort == vokabelKonjugiert:
+                            outputFormSetupNomen(form, output)
+                            form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                            output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
@@ -325,6 +353,9 @@ def main():
                                 Person = Endungsnummer-2
                             vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
+                                outputFormSetupNomen(form, output)
+                                form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                                output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
@@ -343,7 +374,10 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
                         
                         if Wort == vokabelKonjugiert:
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
+                            outputFormSetupNomen(form, output)
+                            form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                            output = VerbenZeile[5]
+                            print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endung in imperativ: #Imperativ 1
                     vokabelKonjugiert = VerbenZeile[1]+Endung
@@ -377,6 +411,9 @@ def main():
                         if Endungsnummer == 1 and Endungsliste == passiv:
                             vokabelKonjugiert = VerbenZeile[1]+"e"+Endung
                         if Wort == vokabelKonjugiert:
+                            outputFormSetupNomen(form, output)
+                            form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                            output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
@@ -393,6 +430,9 @@ def main():
                                 vokabelKonjugiert = VerbenZeile[0]
                                 vokabelKonjugiert = vokabelKonjugiert[0:-2]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
+                                outputFormSetupNomen(form, output)
+                                form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                                output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
                                 
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
@@ -411,7 +451,10 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
                         
                         if Wort == vokabelKonjugiert:
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
+                            outputFormSetupNomen(form, output)
+                            form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                            output = VerbenZeile[5]
+                            print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endung in imperativ: #Imperativ 1
                     if Endung == "":
@@ -448,6 +491,9 @@ def main():
                         if Endungsnummer == 1 and Endungsliste == passiv:
                             vokabelKonjugiert = VerbenZeile[1]+"e"+Endung
                         if Wort == vokabelKonjugiert:
+                            outputFormSetupNomen(form, output)
+                            form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                            output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
@@ -464,6 +510,9 @@ def main():
                                 vokabelKonjugiert = VerbenZeile[0]
                                 vokabelKonjugiert = vokabelKonjugiert[0:-2]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
+                                outputFormSetupNomen(form, output)
+                                form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                                output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
@@ -482,7 +531,10 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
                         
                         if Wort == vokabelKonjugiert:
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
+                            outputFormSetupNomen(form, output)
+                            form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
+                            output = VerbenZeile[5]
+                            print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                 for Endung in imperativ: #Imperativ 1
                     if Endung == "":
