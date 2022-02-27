@@ -197,13 +197,12 @@ def main():
                         if Endungsnummer == 0:
                             if Endungsliste == präsens:
                                 vokabelKonjugiert = VerbenZeile[1]+"ab"+Endung
-
                             else:
                                 vokabelKonjugiert = VerbenZeile[1]+"abo"+Endung
-
+                                
                         if Endungsnummer == 5:
                             vokabelKonjugiert = VerbenZeile[1]+"abu"+Endung
-
+                            
                         if Endungsnummer == 1 and PräoPas == "Passiv":
                             vokabelKonjugiert = VerbenZeile[1]+"abe"+Endung
                         
