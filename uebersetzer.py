@@ -18,7 +18,7 @@ def funktionrepeat(repeatnow):
         clearConsole()
         main()
 
-def main():
+def main(In):
     Endungen = {} #Variable die in verschiedenen Funktionen verwendet werden
     präsens = []
     imperfekt = []
@@ -584,7 +584,7 @@ def main():
     
     setup()
     
-    identifiziert = identifizierung(inputf())
+    identifiziert = identifizierung(In)
     
     print(identifiziert[0])
     print(identifiziert[1])
@@ -592,4 +592,4 @@ def main():
     
 if __name__ == '__main__' :
     clearConsole()
-    main()
+    main(inputf())
