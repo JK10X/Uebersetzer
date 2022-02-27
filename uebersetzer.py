@@ -1,8 +1,6 @@
 import os
 import sys
 
-global repeat
-repeat=""
 def clearConsole():
     command = 'clear'
     if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
@@ -44,6 +42,22 @@ def ImportEndungen():
     perfect = ["i","isti","it","imus","istis","erunt"]
     passiv = ["r","ris","tur","mur","mini","ntur"]
     imperativ = ["","te"]
+def setup():
+    ImportNomen()
+    ImportEndungen()
+    ImportVerben()
+def outputDoppelt(form,output):
+    if form != "": #mehrere bedeutung werden mit "or" gespeichert
+        form = form+" or "
+
+
+    if output != "": #mehrere bedeutung werden mit "or" gespeichert
+            output = output+" or "
+def inputf():
+    inputString = input("Input: ")
+    inputListe = inputString.split()
+    print(inputListe)
+    return(inputListe)
 def funktionrepeat(repeatnow):
     if repeatnow == "n": sys.exit
     if repeatnow == "y":
@@ -51,28 +65,12 @@ def funktionrepeat(repeatnow):
     if repeatnow == "clear":
         clearConsole()
         main()
-def setup():
-    clearConsole()
-    ImportNomen()
-    ImportEndungen()
-    ImportVerben()
-def outputFormSetupNomen(form,output):
-    if form != "": #mehrere bedeutung werden mit "or" gespeichert
-        form = form+" or "
 
-
-    if output != "": #mehrere bedeutung werden mit "or" gespeichert
-            output = output+" or "
-
-def main():
+def identifizierung(inputListe):
     global repeat
-    inputString = input("Input: ")
-    inputListe = inputString.split()
-
+    
     outputListe = []
     formenListe = []
-
-    print(inputListe)
 
     for Wort in inputListe:
         form = ""
@@ -174,7 +172,7 @@ def main():
                         else:
                             vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
                         if Wort == vokabelKonjugiert:
-                            outputFormSetupNomen(form, output)
+                            outputDoppelt(form, output)
                             form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                             output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -190,7 +188,7 @@ def main():
                                 Person = Endungsnummer-2
                             vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
-                                outputFormSetupNomen(form, output)
+                                outputDoppelt(form, output)
                                 form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -220,7 +218,7 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"abe"+Endung
                         
                         if Wort == vokabelKonjugiert:
-                                outputFormSetupNomen(form, output)
+                                outputDoppelt(form, output)
                                 form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = VerbenZeile[5]                            
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -255,7 +253,7 @@ def main():
                         else:
                             vokabelKonjugiert = VerbenZeile[1]+Endung
                         if Wort == vokabelKonjugiert:
-                            outputFormSetupNomen(form, output)
+                            outputDoppelt(form, output)
                             form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                             output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -271,7 +269,7 @@ def main():
                                 Person = Endungsnummer-2
                             vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
-                                outputFormSetupNomen(form, output)
+                                outputDoppelt(form, output)
                                 form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -301,7 +299,7 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"abe"+Endung
                         
                         if Wort == vokabelKonjugiert:
-                            outputFormSetupNomen(form, output)
+                            outputDoppelt(form, output)
                             form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                             output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -337,7 +335,7 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"u"+Endung
 
                         if Wort == vokabelKonjugiert:
-                            outputFormSetupNomen(form, output)
+                            outputDoppelt(form, output)
                             form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                             output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -353,7 +351,7 @@ def main():
                                 Person = Endungsnummer-2
                             vokabelKonjugiert = VerbenZeile[1]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
-                                outputFormSetupNomen(form, output)
+                                outputDoppelt(form, output)
                                 form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -374,7 +372,7 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
                         
                         if Wort == vokabelKonjugiert:
-                            outputFormSetupNomen(form, output)
+                            outputDoppelt(form, output)
                             form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                             output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -411,7 +409,7 @@ def main():
                         if Endungsnummer == 1 and Endungsliste == passiv:
                             vokabelKonjugiert = VerbenZeile[1]+"e"+Endung
                         if Wort == vokabelKonjugiert:
-                            outputFormSetupNomen(form, output)
+                            outputDoppelt(form, output)
                             form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                             output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -430,7 +428,7 @@ def main():
                                 vokabelKonjugiert = VerbenZeile[0]
                                 vokabelKonjugiert = vokabelKonjugiert[0:-2]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
-                                outputFormSetupNomen(form, output)
+                                outputDoppelt(form, output)
                                 form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -451,7 +449,7 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
                         
                         if Wort == vokabelKonjugiert:
-                            outputFormSetupNomen(form, output)
+                            outputDoppelt(form, output)
                             form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                             output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -491,7 +489,7 @@ def main():
                         if Endungsnummer == 1 and Endungsliste == passiv:
                             vokabelKonjugiert = VerbenZeile[1]+"e"+Endung
                         if Wort == vokabelKonjugiert:
-                            outputFormSetupNomen(form, output)
+                            outputDoppelt(form, output)
                             form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                             output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -510,7 +508,7 @@ def main():
                                 vokabelKonjugiert = VerbenZeile[0]
                                 vokabelKonjugiert = vokabelKonjugiert[0:-2]+Bindung+Endung
                             if Wort == vokabelKonjugiert:
-                                outputFormSetupNomen(form, output)
+                                outputDoppelt(form, output)
                                 form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = VerbenZeile[5]
                                 print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -531,7 +529,7 @@ def main():
                             vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
                         
                         if Wort == vokabelKonjugiert:
-                            outputFormSetupNomen(form, output)
+                            outputDoppelt(form, output)
                             form = f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                             output = VerbenZeile[5]
                             print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
@@ -554,14 +552,16 @@ def main():
         formenListe.append(form)
         outputListe.append(output)
 
-    print(formenListe)
-    print(outputListe)
+    return(formenListe, outputListe)
 
-    e= input("Repeat?(y/n)")
-    repeat=e
+def main():
+    setup()
+    identifiziert = identifizierung(inputf())
+    print(identifiziert[0])
+    print(identifiziert[1])
+    funktionrepeat(input("Repeat?(y/n)"))
 
-setup()
-main()
-funktionrepeat(repeat)
-
-print("hallo")
+if __name__ == '__main__' :
+    clearConsole()
+    main()
+    print("ende")
