@@ -1,6 +1,5 @@
-import os
-
 def clearConsole():
+    import os
     command = 'clear'
     if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
         command = 'cls'
@@ -11,14 +10,15 @@ def inputf():
     print(inputListe)
     return(inputListe)
 def funktionrepeat(repeatnow):
+    import uebersetzer
     if repeatnow == "n": quit()
     if repeatnow == "y":
-        main()
+        return("y")
     if repeatnow == "clear":
-        clearConsole()
-        main()
+        uebersetzer.clearConsole()
+        return("y")
 
-def main(In):
+def bestimmen(In):
     Endungen = {} #Variable die in verschiedenen Funktionen verwendet werden
     präsens = []
     imperfekt = []
@@ -588,8 +588,14 @@ def main(In):
     
     print(identifiziert[0])
     print(identifiziert[1])
-    funktionrepeat(input("Repeat?(y/n)"))
+    return(identifiziert[0],identifiziert[1])
     
+def main():
+    inputVar = inputf()
+    test = bestimmen(inputVar)
+    if "y" == funktionrepeat(input("Repeat?(y/n)")): main()
+
+
 if __name__ == '__main__' :
     clearConsole()
-    main(inputf())
+    main()
