@@ -103,9 +103,6 @@ def bestimmen(In):
                             output = output+" or "
                     output = NomenZeile[4]
 
-                    print(Wort," = ",NomenZeile[4],"(Nominativ, Singular)")
-
-
                 for x, Endung in enumerate(NomenEndungen):
                     allreadythere = 0
                     WortDekliniert = NomenZeile[1]+Endung
@@ -114,7 +111,6 @@ def bestimmen(In):
                             form = form+" or "
 
                         form = form+"Nomen#"+NomenZeile[0]+"#"+NomenZeile[2]+"#"+NomenZeile[3]
-                        print(Wort ," = ", NomenZeile[4], end = "")
 
                         outputSplit = output.split(" or ")
                         for IsoutputInListe in outputSplit:
@@ -130,34 +126,36 @@ def bestimmen(In):
 
                         if x == 0 or x == 5:
                             form = form+"#Genitiv"
-                            print(" (Genitiv, ", end = ""),
                         if x == 1 or x == 6:
-                            print(" (Dativ, ", end = ""),
                             form = form+"#Dativ"
                         if x == 2 or x == 7:
                             form = form+"#Akkusativ"
-                            print(" (Akkusativ, ", end = ""),
                         if x == 3 or x == 8:
                             form = form+"#Ablativ"
-                            print(" (Ablativ, ", end = ""),
                         if x == 4:
                             form = form+"#Nominativ"
-                            print(" (Nominativ, ", end = ""),
 
                         if x <= 3:
                             form = form+"#Singular"
-                            print("Singular)"),
                         if x >= 4:
                             form = form+"#Plural"
-                            print("Plural)"),
 
                     if NomenZeile[2] == "o" and x == 0: #Vokativ, Singular
                         WortDekliniert = NomenZeile[1]+"e"
                         if WortDekliniert == Wort:
                             form = form+"Nomen#"+NomenZeile[0]+"#"+NomenZeile[2]+"#"+NomenZeile[3]
                             form = form+"#Singular#Vokativ"
-                            print(Wort, " = ", NomenZeile[4],end = "")
-                            print(" (Vokativ, Singular)"),
+                            outputSplit = output.split(" or ")
+                            for IsoutputInListe in outputSplit:
+                                if IsoutputInListe == NomenZeile[4]:
+                                    allreadythere = 1
+
+                            if output != "": #mehrere bedeutung werden mit "or" gespeichert
+                                output = output+" or "
+                            if allreadythere == 1: #mehrere formen aber gleiches Wort = in output "/"
+                                output = output+"/"
+                            else:
+                                output = output+NomenZeile[4]
 
 
 
@@ -165,7 +163,10 @@ def bestimmen(In):
                 VerbenZeile = VerbenZeile.split("#")
 
                 if Wort == VerbenZeile[0]: #Infinitiv, Präsens, Aktiv
-                    print(Wort," = ","Infinitiv#Präsens#Aktiv von ",VerbenZeile[5])
+                    formDoppelt()
+                    outputDoppelt()
+                    form = form+f"Verb#{VerbenZeile[0]}#Infinitiv#Präsens#Aktiv"
+                    output = output+VerbenZeile[5]
 
                 if VerbenZeile[4] == "a": #a-Konjugation
                     for Endungsliste, PräoPas in [präsens, "Aktiv"], [passiv, "Passiv"]:#Präsens, Indikativ
@@ -189,7 +190,6 @@ def bestimmen(In):
                                 outputDoppelt()
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
                                     
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
                         for Endungsnummer, Endung in enumerate(Endungsliste):
@@ -206,8 +206,7 @@ def bestimmen(In):
                                     outputDoppelt()
                                     form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                     output = output+VerbenZeile[5]
-                                    print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
-
+                                    
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
                         for Endungsnummer, Endung in enumerate(Endungsliste):
                             KonjPrä = f"Futur#{PräoPas}#Indikativ"
@@ -237,19 +236,27 @@ def bestimmen(In):
                                 outputDoppelt()
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]                            
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
                                     
                     for Endung in imperativ: #Imperativ 1
                         vokabelKonjugiert = VerbenZeile[1]+"a"+Endung
                         if Wort == vokabelKonjugiert:
                             if Endung == "":
-                                print("Singular#Imperativ# von ",VerbenZeile[5])
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Singular"
+                                output = output+VerbenZeile[5]
 
                             if Endung == "te":
-                                print("Plural#Imperativ# von ",VerbenZeile[5])
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Plural"
+                                output = output+VerbenZeile[5]                                                                                                                   
 
                     if Wort == VerbenZeile[1]+"ari": #Infinitiv, Präsens, Passiv
-                        print(Wort," = ","Infinitiv#Präsens#Passiv von ",VerbenZeile[5])
+                        formDoppelt()
+                        outputDoppelt()
+                        form = form+f"Verb#{VerbenZeile[0]}Infinitiv#Präsens#Passiv"
+                        output = output+VerbenZeile[5]
 
                 if VerbenZeile[4] == "e": #e-Konjugation
                     for Endungsliste, PräoPas in [präsens, "Aktiv"], [passiv, "Passiv"]:#Präsens, Indikativ
@@ -273,7 +280,6 @@ def bestimmen(In):
                                 outputDoppelt()
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
                                 
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
                         for Endungsnummer, Endung in enumerate(Endungsliste):
@@ -290,7 +296,6 @@ def bestimmen(In):
                                     outputDoppelt()
                                     form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                     output = output+VerbenZeile[5]
-                                    print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
                         for Endungsnummer, Endung in enumerate(Endungsliste):
@@ -321,19 +326,27 @@ def bestimmen(In):
                                 outputDoppelt()
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
-
+                                
                     for Endung in imperativ: #imperativ 1
                         vokabelKonjugiert = VerbenZeile[1]+Endung
                         if Wort == vokabelKonjugiert:
                             if Endung == "":
-                                print("Singular#Imperativ# von ",VerbenZeile[5])
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Singular"
+                                output = output+VerbenZeile[5]
 
                             if Endung == "te":
-                                print("Plural#Imperativ# von ",VerbenZeile[5])
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Plural"
+                                output = output+VerbenZeile[5]                                                                                                                   
 
                     if Wort == VerbenZeile[1]+"ri": #Infinitiv, Präsens, Passiv
-                        print(Wort," = ","Infinitiv#Präsens#Passiv von ",VerbenZeile[5])
+                        formDoppelt()
+                        outputDoppelt()
+                        form = form+f"Verb#{VerbenZeile[0]}Infinitiv#Präsens#Passiv"
+                        output = output+VerbenZeile[5]
 
                 if VerbenZeile[4] == "i": #i-Konjugation
                     for Endungsliste, PräoPas in [präsens, "Aktiv"], [passiv, "Passiv"]:#Präsens, Indikativ
@@ -358,7 +371,6 @@ def bestimmen(In):
                                 outputDoppelt()
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
                         for Endungsnummer, Endung in enumerate(Endungsliste):
@@ -375,7 +387,6 @@ def bestimmen(In):
                                     outputDoppelt()
                                     form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                     output = output+VerbenZeile[5]
-                                    print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
                         for Endungsnummer, Endung in enumerate(Endungsliste):
@@ -397,19 +408,27 @@ def bestimmen(In):
                                 outputDoppelt()
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                     for Endung in imperativ: #Imperativ 1
                         vokabelKonjugiert = VerbenZeile[1]+Endung
                         if Wort == vokabelKonjugiert:
                             if Endung == "":
-                                print("Singular#Imperativ# von ",VerbenZeile[5])
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Singular"
+                                output = output+VerbenZeile[5]
 
                             if Endung == "te":
-                                print("Plural#Imperativ# von ",VerbenZeile[5])
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Plural"
+                                output = output+VerbenZeile[5]                                                                                                                   
 
                     if Wort == VerbenZeile[1]+"ri": #Infinitiv, Präsens, Passiv
-                        print(Wort," = ","Infinitiv#Präsens#Passiv von ",VerbenZeile[5])
+                        formDoppelt()
+                        outputDoppelt()
+                        form = form+f"Verb#{VerbenZeile[0]}Infinitiv#Präsens#Passiv"
+                        output = output+VerbenZeile[5]
 
                 if VerbenZeile[4] == "kons": #konsonantische Kojugation
                     for Endungsliste, PräoPas in [präsens, "Aktiv"], [passiv, "Passiv"]:#Präsens, Indikativ
@@ -435,7 +454,6 @@ def bestimmen(In):
                                 outputDoppelt()
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
                         for Endungsnummer, Endung in enumerate(Endungsliste):
@@ -455,7 +473,6 @@ def bestimmen(In):
                                     outputDoppelt()
                                     form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                     output = output+VerbenZeile[5]
-                                    print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
                                     
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
                         for Endungsnummer, Endung in enumerate(Endungsliste):
@@ -477,22 +494,27 @@ def bestimmen(In):
                                 outputDoppelt()
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                     for Endung in imperativ: #Imperativ 1
-                        if Endung == "":
-                            vokabelKonjugiert = VerbenZeile[0]
-                            vokabelKonjugiert = vokabelKonjugiert[0:-2]+Endung
-                            if Wort == vokabelKonjugiert:
-                                print("Singular#Imperativ# von ",VerbenZeile[5])
+                        vokabelKonjugiert = VerbenZeile[1]+Endung
+                        if Wort == vokabelKonjugiert:
+                            if Endung == "":
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Singular"
+                                output = output+VerbenZeile[5]
 
-                        if Endung == "te":
-                            vokabelKonjugiert = VerbenZeile[1]+"i"+Endung
-                            if Wort == vokabelKonjugiert:
-                                print("Plural#Imperativ# von ",VerbenZeile[5])
+                            if Endung == "te":
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Plural"
+                                output = output+VerbenZeile[5]                         
 
                     if Wort == VerbenZeile[1]+"i": #Infinitiv, Präsens, Passiv
-                        print(Wort," = ","Infinitiv#Präsens#Passiv von ",VerbenZeile[5])
+                        formDoppelt()
+                        outputDoppelt()
+                        form = form+f"Verb#{VerbenZeile[0]}Infinitiv#Präsens#Passiv"
+                        output = output+VerbenZeile[5]
 
                 if VerbenZeile[4] == "konsI": #konsonatische Konjugation (i-Erweiterung)
                     for Endungsliste, PräoPas in [präsens, "Aktiv"], [passiv, "Passiv"]:#Präsens, Indikativ
@@ -518,7 +540,6 @@ def bestimmen(In):
                                 outputDoppelt()
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]: #Imperfekt; Konjuktiv:
                         for Endungsnummer, Endung in enumerate(Endungsliste):
@@ -538,7 +559,6 @@ def bestimmen(In):
                                     outputDoppelt()
                                     form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                     output = output+VerbenZeile[5]
-                                    print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                     for Endungsliste, PräoPas in [imperfekt, "Aktiv"], [passiv, "Passiv"]:#Futur
                         for Endungsnummer, Endung in enumerate(Endungsliste):
@@ -560,23 +580,28 @@ def bestimmen(In):
                                 outputDoppelt()                                
                                 form = form+f"Verb#{VerbenZeile[0]}#{Person}.#{Nummerus}#{KonjPrä}"
                                 output = output+VerbenZeile[5]
-                                print(f"{Person}.#{Nummerus}#{KonjPrä} von {VerbenZeile[5]}")
 
                     for Endung in imperativ: #Imperativ 1
-                        if Endung == "":
-                            vokabelKonjugiert = VerbenZeile[0]
-                            vokabelKonjugiert = vokabelKonjugiert[0:-2]+Endung
-                            if Wort == vokabelKonjugiert:
-                                print("Singular#Imperativ# von ",VerbenZeile[5])
+                        vokabelKonjugiert = VerbenZeile[1]+Endung
+                        if Wort == vokabelKonjugiert:
+                            if Endung == "":
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Singular"
+                                output = output+VerbenZeile[5]
 
-                        if Endung == "te":
-                            vokabelKonjugiert = VerbenZeile[1]+""+Endung
-                            if Wort == vokabelKonjugiert:
-                                print("Plural#Imperativ# von ",VerbenZeile[5])
+                            if Endung == "te":
+                                formDoppelt()
+                                outputDoppelt()
+                                form = form+f"Verb#{VerbenZeile[0]}#Imperativ#Plural"
+                                output = output+VerbenZeile[5]                                                                                                                              
 
                     if Wort == VerbenZeile[1]: #Infinitiv, Präsens, Passiv
-                        print(Wort," = ","Infinitiv#Präsens#Passiv von ",VerbenZeile[5])
-
+                        formDoppelt()
+                        outputDoppelt()
+                        form = form+f"Verb#{VerbenZeile[0]}Infinitiv#Präsens#Passiv"
+                        output = output+VerbenZeile[5]
+                        
             formenListe.append(form)
             outputListe.append(output)
 
@@ -586,13 +611,13 @@ def bestimmen(In):
     
     identifiziert = identifizierung(In)
     
-    print(identifiziert[0])
-    print(identifiziert[1])
     return(identifiziert[0],identifiziert[1])
     
 def main():
     inputVar = inputf()
     test = bestimmen(inputVar)
+    print(test[0])
+    print(test[1])
     if "y" == funktionrepeat(input("Repeat?(y/n)")): main()
 
 
