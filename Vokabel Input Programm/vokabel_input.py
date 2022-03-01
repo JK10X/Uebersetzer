@@ -25,7 +25,7 @@ switch_to_dark = pygame.image.load(switch_to_dark_path)
 button_hovered_path = os.path.join(BASE_PATH, 'graphics/toggle_button_active.png')
 button_hovered = pygame.image.load(button_hovered_path)
 
-buttons_pressed = pygame.mouse.get_pressed()
+buttons_pressed = [False, False, False]
 
 def show_generals():
     screen.fill(background_colour[colour_mode])
