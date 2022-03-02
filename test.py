@@ -1,20 +1,10 @@
-import pygame
-import sys
-import time
-clock = pygame.time.Clock()
-pygame.init()
+test = ""
+Stammform_box = (f"{test}hallo","hallo 2.0")
+_box = (1,2)
 
-screen = pygame.display.set_mode((750, 750))
-pygame.display.set_caption("Hallo")
-
-def detect():
-    if event.type == pygame.KEYDOWN:
-        print("Detected")
 
 while True:
-    clock.tick(45)
-    for event in pygame.event.get():
-        detect()
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+    Cursorbox = ""
+
+    Cursorbox = locals()[Cursorbox+"_box"]
+    print(Stammform_box)
