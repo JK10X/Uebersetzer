@@ -1,28 +1,40 @@
-import pygame_textinput
-import pygame
-pygame.init()
 
-# Create TextInput-object
-textinput = pygame_textinput.TextInputVisualizer()
 
-screen = pygame.display.set_mode((1000, 200))
-clock = pygame.time.Clock()
-textinput.value = ""
-while True:
-    screen.fill((225, 225, 225))
-
-    events = pygame.event.get()
-
-    # Feed it with events every frame
-    textinput.update(events)
-    # Blit its surface onto the screen
-    screen.blit(textinput.surface, (10, 10))
-    if textinput.value == "test":
-        exit()
-    for event in events:
-        print(type(event))
-        if event.type == pygame.QUIT:
-            exit()
-
-    pygame.display.update()
-    clock.tick(30)
+def main():
+    Wortart = input("Wortart:")
+    Wortart = "Nomen"
+    if Wortart == "N" or Wortart == "n": Wortart = "Nomen"
+    if Wortart == "V" or Wortart == "v": Wortart = "Verb"
+    
+    VokabelZeile = ""
+    print(Wortart)
+    if Wortart == "Nomen":
+        Nominativ = input("Nominativ:")
+        Genitiv = input("Genitiv:")
+        GenitivPlural = input("GenitivPlural:")
+        Geschlecht = input("Geschlecht:")
+        Erweiterung = ""
+        Stamm = ""        
+        for Deklination in ["om","af","drf","drfE","drm","drmE","drn", "drnE", "drni", "ef", "em", "on", "um"]:
+            if Geschlecht == "m":
+                if Genitiv[-2:-1] == "ei": Deklination = "e"
+                else:
+                    if Genitiv[-1] == "i":
+                        Stamm = Genitiv[0:-1]
+                        Deklination = "o"
+                        print("test")
+                    if Genitiv[-2:] == "us":
+                        Stamm = Genitiv[-2:] 
+                        Deklination = "u"
+                    if Genitiv[-2:] == "is": 
+                        Deklination = "dr"
+                        if GenitivPlural[-3:-1] == "ium": Erweiterung = "E"
+                        Stamm = Genitiv[0:-2]
+        Uebersetzung = input("Uebersetzung:")
+                        
+                    
+                
+        VokabelZeile = f"{Nominativ}#{Stamm}#{Deklination}#{Geschlecht}{Erweiterung}#{Uebersetzung}"
+        print(VokabelZeile)
+if __name__ == "__main__":
+    main()
