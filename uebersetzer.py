@@ -35,10 +35,10 @@ def bestimmen(In):
         Endungen = {}
         for Dg in ["om","af","drf","drfE","drm","drmE","drn", "drnE", "drni", "ef", "em", "on", "um"]:
             locals()[Dg+"Liste"] = []
-            locals()[Dg] = open('Endungen/Nomen/'+Dg+'.txt','r')
+            with open('Endungen/Nomen/'+Dg+'.txt','r') as locals()[Dg]:
 
-            for Zeile in locals()[Dg]:
-                locals()[Dg+"Liste"].append(Zeile.rstrip())
+                for Zeile in locals()[Dg]:
+                    locals()[Dg+"Liste"].append(Zeile.rstrip())
             
             Endungen[Dg] = locals()[Dg+"Liste"]
 

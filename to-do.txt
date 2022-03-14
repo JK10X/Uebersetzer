@@ -8,6 +8,10 @@
 .Präpositionen
 -KONJUNKTIV!!!!
 
+
+"drf","drfE","drmE","drn", "drnE", "drni", "ef", "em", "on", "um"
+
+
 Done:
 output: Nomen
 formenliste: Nomen
