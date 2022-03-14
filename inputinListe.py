@@ -1,8 +1,9 @@
 
 
 def main():
+    import pdb
+    #pdb.set_trace()
     Wortart = input("Wortart:")
-    Wortart = "Nomen"
     if Wortart == "N" or Wortart == "n": Wortart = "Nomen"
     if Wortart == "V" or Wortart == "v": Wortart = "Verb"
     
@@ -17,12 +18,11 @@ def main():
         Stamm = ""        
         for Deklination in ["om","af","drf","drfE","drm","drmE","drn", "drnE", "drni", "ef", "em", "on", "um"]:
             if Geschlecht == "m":
-                if Genitiv[-2:-1] == "ei": Deklination = "e"
+                if Genitiv[-2:-1] == "ei": Deklination = "e"; Stamm = Genitiv[0:-2]
                 else:
                     if Genitiv[-1] == "i":
                         Stamm = Genitiv[0:-1]
                         Deklination = "o"
-                        print("test")
                     if Genitiv[-2:] == "us":
                         Stamm = Genitiv[-2:] 
                         Deklination = "u"
@@ -30,6 +30,12 @@ def main():
                         Deklination = "dr"
                         if GenitivPlural[-3:-1] == "ium": Erweiterung = "E"
                         Stamm = Genitiv[0:-2]
+            if Geschlecht == "f":
+                if Genitiv[-2:] == "ei": Deklination = "e"
+                else:
+                    if Genitiv[-2:] == "ae":
+                        Deklination = "a"
+                        Stamm = Genitiv[-2:]
         Uebersetzung = input("Uebersetzung:")
                         
                     
