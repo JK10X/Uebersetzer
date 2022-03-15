@@ -62,9 +62,9 @@ def bestimmen(In):
     def ImportVerben():
         nonlocal VerbenListe
         VerbenListe = []
-        with open('Worte/Verben.txt','r') as Verben
-        for Zeile in Verben:
-            VerbenListe.append(Zeile.rstrip())
+        with open('Worte/Verben.txt','r') as Verben:
+            for Zeile in Verben:
+                VerbenListe.append(Zeile.rstrip())
     def setup():
         ImportNomen()
         ImportEndungen()
