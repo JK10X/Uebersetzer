@@ -56,13 +56,13 @@ def bestimmen(In):
     def ImportNomen():
         nonlocal NomenListe
         NomenListe = []
-        Nomen = open('Worte/Nomen.txt','r')
-        for Zeile in Nomen:
-            NomenListe.append(Zeile.rstrip())
+        with open('Worte/Nomen.txt','r') as Nomen:
+            for Zeile in Nomen:
+                NomenListe.append(Zeile.rstrip())
     def ImportVerben():
         nonlocal VerbenListe
         VerbenListe = []
-        Verben = open('Worte/Verben.txt','r')
+        with open('Worte/Verben.txt','r') as Verben
         for Zeile in Verben:
             VerbenListe.append(Zeile.rstrip())
     def setup():
