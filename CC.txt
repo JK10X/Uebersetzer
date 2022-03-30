@@ -1,0 +1,7 @@
+1.
+    Publisher: Landesbildungsserver Baden-Württemberg
+    Source: https://www.schule-bw.de/faecher-und-schularten/sprachen-und-literatur/latein/sprache/grundwortschatz/alphabetisch Sub-Pages: A bis C; D bis G; H bis M; N bis R; S bis V
+
+    Edited: From all the sub-pages we used the tables and converted them to a format which our programm can use. The formated text is mainly in the files in the "Worte" folder.
+
+    (Ausgangsmaterialien des Landesbildungsservers Baden-Württemberg (www.schule-bw.de) am Institut für Bildungsanalysen Baden-Württemberg (IBBW) (https://ibbw.kultus-bw.de))
