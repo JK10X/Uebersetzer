@@ -33,7 +33,7 @@ def bestimmen(In):
     def ImportEndungen():
         nonlocal Endungen
         Endungen = {}
-        for Dg in ["om","af","drf","drfE","drm","drmE","drn", "drnE", "drni", "ef", "em", "on", "um", "am"]:
+        for Dg in ["om","af","drf","drfE","drm","drmE","drn", "drnE", "drni", "ef", "em", "on", "um", "am","0000000000undeklinierbar!"]:
             locals()[Dg+"Liste"] = []
             with open('Endungen/Nomen/'+Dg+'.txt','r') as locals()[Dg]:
 
