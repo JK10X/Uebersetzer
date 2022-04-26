@@ -33,7 +33,7 @@ def bestimmen(In):
     def ImportEndungen():
         nonlocal Endungen
         Endungen = {}
-        for Dg in ["om","af","drf","drfE","drm","drmE","drn", "drnE", "drni", "ef", "em", "on", "um", "am","0000000000undeklinierbar!"]:
+        for Dg in ["om","af","drf","drfE","drm","drmE","drn", "drnE", "drni", "drm und f", "ef", "em", "on", "um", "un", "uf", "am","0000000000undeklinierbar!"]:
             locals()[Dg+"Liste"] = []
             with open('Endungen/Nomen/'+Dg+'.txt','r') as locals()[Dg]:
 
@@ -94,16 +94,23 @@ def bestimmen(In):
                 NomenEndungen = NomenZeile[2]+NomenZeile[3] #welche Endung
                 NomenEndungen = Endungen[NomenEndungen]
                 NomenNominativ = NomenZeile[0]
-                if Wort == NomenNominativ: #Nominativ
-                    if form != "":
-                            form = form+" or "
-                    form = f"Nomen#{NomenZeile[0]}#{NomenZeile[2]}#{NomenZeile[3]}Nominativ#Singular"
+                if NomenZeile[5] == "": 
+                    if Wort == NomenNominativ: #Nominativ
+                        if form != "":
+                                form = form+" or "
+                        form = f"Nomen#{NomenZeile[0]}#{NomenZeile[2]}#{NomenZeile[3]}Nominativ#Singular"
 
-                    if output != "":
-                            output = output+" or "
-                    output = NomenZeile[4]
+                        if output != "":
+                                output = output+" or "
+                        output = NomenZeile[4]
 
                 for x, Endung in enumerate(NomenEndungen):
+                    
+                    try:
+                        if NomenZeile[5] == "Plural" and x <= 3: #wenn pluralwort und singular form: skip
+                            continue
+                    except: pass
+                    
                     allreadythere = 0
                     WortDekliniert = NomenZeile[1]+Endung
                     if Wort == WortDekliniert:
@@ -137,6 +144,8 @@ def bestimmen(In):
 
                         if x <= 3:
                             form = form+"#Singular"
+                        if x >= 4 and NomenZeile[5] == "Plural": #Pluralwort
+                            form = form+"#Pluralwort"
                         if x >= 4:
                             form = form+"#Plural"
 

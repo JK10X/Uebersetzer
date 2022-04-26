@@ -1,14 +1,280 @@
-servus#serv#o#m#der Sklave, der Diener
-domina#domin#a#f#die Herrin, die Dame
-serva#serv#a#f#die Sklavin, die Dienerin
-dominus#domin#o#m#der Herr
-equus#equ#o#m#das Pferd
-populus#popul#o#m#das Volk
-victoria#victori#a#f#der Sieg
-medicus#medic#o#m#der Arzt
-templum#templ#o#n#der Tempel
-victor#victor#dr#m#der Sieger
-pars#part#dr#fE#der Teil, die Seite
-dies#di#e#m#der Tag
-agricola#agricol#a#m#der Bauer
-fas#0000000000#0000000000#undeklinierbar!#das Recht, das göttliche Gebot
+accusator#accusator#dr#m#der Ankl�ger#
+acies#aci#e#f#die Schlachtreihe#
+actio#action#dr#f#das Handeln, die Handlung; der Vortrag, die �ffentliche Rede (daher auch: die Gerichtsrede)#
+aditus#us#u#m#der Zugang#
+adulescens#adulescent#dr#m#der junge Mann (etwa zw. 14 und 30 Jahren)#
+adversarius#adversari#o#m#der Feind#
+aedes#aed#dr#fE#das Haus#Plural
+aedes#aed#dr#f#der Tempel#
+aedificium#aedifici#o#n#das Geb�ude#
+aedilis#aedil#dr#m#der �dil (Bauamtsleiter)#
+aequitas#aequitat#dr#f#die gerechte Behandlung, die Gerechtigkeit, die Gleichheit#
+aestas#aestat#dr#f#der Sommer#
+aetas#aetat#dr#f#die Zeit, das Zeitalter#
+ager#agr#o#m#das Feld, der Acker#
+agricola#agricol#a#m#der Bauer#
+amicus#amic#o#m#der der Freund/die Freundin (auch die Geliebte)#
+amicus#amic#a#f#der der Freund/die Freundin (auch die Geliebte)#
+amor#amor#dr#m#die Liebe, die Zuneigung#
+ancilla#ancill#a#f#die Sklavin#
+animal#animal#dr#n#das Lebewesen, das Tier#
+animus#anim#o#m#der Geist, der Sinn#
+annus#ann#o#m#das Jahr#
+appetitus#us#u#m#das Streben, die Neigung (zu einer Sache)#
+ara#ar#a#f#der Altar#
+arbor#arbor#dr#f#der Baum#
+arma#arm#o#n#die Waffen#Plural
+ars#art#dr#f#die Geschicklichkeit, die Kunst#
+artifex#artific#dr#m#der K�nstler#
+artificium#artifici#o#n#das Kunstwerk#
+auctoritas#auctoritat#dr#f#das Ansehen, die Autorit�t#
+auris#aur#dr#f#das Ohr#
+autumnus#autumn#o#m#der Herbst#
+auxilia#auxili#o#n#die Hilfstruppen#Plural
+auxilium#auxili#o#n#die Hilfe#
+avaritia#avariti#a#f#die Habgier, der Geiz#
+avis#av#dr#f#der Vogel#
+avus#av#o#m#der Gro�vater#
+beneficium#benefici#o#n#die Wohltat, die Beg�nstigung#
+beneficentia#beneficenti#a#f#die Wohlt�tigkeit#
+benevolentia (auch: benivolentia)#benevolenti#a#f#das Wohlwollen, die Freundlichkeit#
+benignitas#benignitat#dr#f#das Wohlwollen, die Freundlichkeit#
+bestia#besti#a#f#das (wilde) Tier#
+bona#bon#o#n#der Besitz, die G�ter#Plural
+bonum#bon#o#n#das Gute, der Wert#
+bos#bov#dr#m und f#das Rind, die Kuh#
+canis#can#dr#m und f#der Hund#
+caput#capit#dr#n#der Kopf, das Haupt#
+causa#caus#a#f#der Grund, die Sache, die Angelegenheit#
+clamor#clamor#dr#m#das Geschrei, der L�rm, das Rufen#
+cliens#client#dr#m#der Klient#
+cogitatio#cogitation#dr#f#der Gedanke, die Vorstellung#
+cognitio#cognition#dr#f#die Erkenntnis, das Kennenlernen einer Sache, das Denkverm�gen#
+colloquium#colloqui#o#n#das Gespr�ch#
+comes#comit#dr#m und f#der Begleiter, die Begleiterin#
+commodum#commod#o#n#der Vorteil, der Nutzen#
+communitas#communitat#dr#f#die Gemeinschaft#
+concursus#us#u#m#der Auflauf#
+coniunx#coniug#dr#m und f#der Gatte/die Gattin#
+constantia#constanti#a#f#die Standhaftigkeit#
+consul#consul#dr#m#der Konsul#
+consulatus#us#u#m#das Konsulat#
+contentio#contention#dr#f#die Anspannung, der Eifer, der Streit#
+copia#copi#a#f#die Menge, der Vorrat#
+corpus#corpor#dr#n#der K�rper#
+culpa#culp#a#f#die Schuld#
+cura#cur#a#f#der Kummer, die Sorge#
+curia#curi#a#f#die Kurie, das Ratsgeb�ude#
+dea#de#a#f#die G�ttin#
+decorum#decor#o#n#das Anst�ndige, das Schickliche, das moralisch Korrekte#
+decus#decor#dr#n#von sichtbaren Dingen: die Zierde; als philosophischer Begriff: der Anstand, die Ehre#
+deus#de#o#m#der Gott#
+dies#die#o#m#der Tag; als Substantiv im Genus femininum: der Termin#
+dignitas#dignitat#dr#f#die W�rde#
+diligentia#diligenti#a#f#die Sorgfalt#
+disciplina#disciplin#a#f#die Lehre#
+discipulus#discipul#o#m#der Sch�ler#
+divitiae#divitiar#dr#f#der Reichtum#Plural
+dolor#dolor#dr#m#der Schmerz#
+dominus#domin#o#m#der Herr#
+domina#domin#a#f#die Herrin, die Dame#
+dux#duc#dr#m#der Anf�hrer#
+equus#equ#o#m#das Pferd#
+exemplum#exempl#o#n#das Beispiel#
+exercitus#us#u#m#das Heer#
+exercitus#fabr#o#m#der Handwerker#
+fabula#fabul#a#f#die Erz�hlung, die Geschichte#
+facinus#facinor#dr#n#die Tat, das Verbrechen (Herkunft: facere)#
+fama#fam#a#f#das Ger�cht#
+fas#0000000000#0000000000#undeklinierbar!#das Recht, das g�ttliche Gebot#
+femina#femin#a#f#die Frau#
+ferrum#ferr#o#n#die Waffe, das Schwert#
+fides#fid#e#f#die Treue#
+filia#fili#a#f#die Tochter#
+filius#fili#o#m#der Sohn#
+finis#fin#dr#m#die Grenze#
+flagitium#flagiti#o#n#das Verbrechen#
+flumen#flumin#dr#n#der Fluss#
+fortitudo#fortitudin#dr#f#der Tapferkeit, der Mut (im positiven Sinn)#
+forum#for#o#n#der Marktplatz, das Forum#
+frater#fratr#dr#m#der Bruder#
+fructus#us#u#m#die Frucht, die Feldfrucht#
+frumentum#frument#o#n#das Getreide#
+gaudium#gaudi#o#n#die Freude#
+gens#gent#dr#f#der Stamm, das Geschlecht, die Gro�familie#
+genus#gener#dr#n#die Abstammung, die Art#
+gladius#gladi#o#m#das Schwert#
+gloria#glori#a#f#der Ruhm, die Anerkennung, die jemand erf�hrt#
+gravitas#gravitat#dr#f#der Ernst, die W�rde, die Bedeutung (�Gewichtigkeit�)#
+hiems#hiem#dr#f#der Winter#
+homo#homin#dr#m#der Mensch#
+honestas#honestat#dr#f#die Ehrenhaftigkeit#
+honestum#honest#o#n#das Ehrenvolle/honestus, honesta, honestum: ehrenvoll#
+honor #honor#dr#m#das Ehrenamt, die Ehre#
+honor #honor#dr#m#das Ehrenamt, die Ehre#
+hora#hor#a#f#die Stunde#
+hostis#host#dr#m#der Feind, der Staatsfeind#
+humanitas#humanitat#dr#f#die Menschenw�rde, die Menschenliebe, <br />die Bildung#
+imperator#imperator#dr#m#der Feldherr; seit Augustus auch: der Kaiser#
+imperium#imperi#o#n#die milit�rische Macht, der Herrschaftsbereich#
+infans#infant#dr#m#das kleine Kind#
+inimicus#inimic#o#m#der Feind#
+inopia#inopi#a#f#die Mangel, die Not#
+ira#ir#a#f#der Zorn, die Wut#
+iter#itiner#dr#n#der Weg, die Reise, der Marsch#
+iudex#iudic#dr#m#der Richter#
+ius#iur#dr#n#das Recht#
+iustitia#iustiti#a#f#die Gerechtigkeit#
+iuvenis#iuven#dr#m#der junge Mann (zwischen 20 und 45 Jahren)#
+labor#labor#dr#m#die (harte) Arbeit, die M�he#
+laetitia#laetiti#a#f#die Freude#
+legio#legion#dr#f#die Legion (5000 � 6000 Mann)#
+lex#leg#dr#f#das Gesetz#
+liberalitas#liberalitat#dr#f#die Freigebigkeit; die Bereitschaft zu spenden und anderen Gutes zu tun#
+liberi#liber#o#m#die (freien) Kinder#Plural
+libertas#libertat#dr#f#die Freiheit#
+libertus#libert#o#m#der Freigelassene (d.h. ein ehemaliger Sklave)#
+lingua#lingu#a#f#die Zunge, die Sprache#
+littera#litter#a#f#der Buchstabe#
+litterae#litterar#dr#f#die Schrift, der Brief, die Wissenschaft(en)#Plural
+locus#loc#o#m#der Ort#
+ludus#lud#o#m#die Schule, das Spiel, das Schauspiel#
+luna#lun#a#f#der Mond#
+luxuria#luxuri#a#f#die �ppigkeit, die Ausschweifung#
+magister#magistr#o#m#der Lehrer#
+magistratus#us#u#m#der Beamte, das Amt#
+maiores#mai#o#m#die Vorfahren#Plural
+manus#us#u#f#die Hand#
+mare#mar#dr#n#das Meer#
+maritus#marit#o#m#der Ehemann#
+mater#matr#dr#f#die Mutter#
+medicus#medic#o#m#der Arzt#
+memoria#memori#a#f#die Erinnerung, das Ged�chtnis#
+mens#ment#dr#f#der Sinn, der Verstand, der Geist#
+mensis#mens#dr#f#der Monat#
+mercator#mercator#dr#m#der H�ndler, der Kaufmann#
+merces#merced#dr#f#der Lohn#
+metus#us#u#m#die Furcht, die Angst#
+miles#milit#dr#m#der Soldat#
+modus#mod#o#m#das Ma�, der Ma�stab, die Grenze, die M��igung#
+mors#mort#dr#f#der Tod#
+mos#mor#dr#m#die Sitte, die Gewohnheit, das gewohnte Verhalten; der (gute) Wille#
+motus#us#u#m#die Bewegung#
+mulier#mulier#dr#f#die Frau#
+multitudo#multitudin#dr#f#die Menge#
+munus#muner#dr#n#die Aufgabe, das Geschenk#
+nefas#0000000000#0000000000#undeklinierbar!#das Unrecht, der Frevel#
+negotium#negoti#o#n#der Handel, die Aufgabe, die Unternehmung#
+nomen#nomin#dr#n#der Name#
+novae res#novarum r#e#f#der Umsturz#Plural
+nox#noct#dr#f#die Nacht#
+numen#numin#dr#n#der Wille, die Macht, die Gottheit#
+numerus#numer#o#m#die Zahl#
+nuntius#nunti#o#m#der Bote, die Botschaft#
+obses#obsid#dr#m und f#die Geisel#
+oculus#ocul#o#m#das Auge#
+odium#odi#o#n#der Hass#
+officium#offici#o#n#der Dienst, die T�tigkeit; die Verpflichtung, die Pflicht#
+opera#oper#a#f#die Arbeit#
+opes#op#dr#f#das Verm�gen, der Reichtum (auch: die Truppen)#Plural
+oppidum#oppid#o#n#die kleine Stadt, die Landstadt#
+opus#oper#dr#n#das Werk#
+oraculum#oracul#o#n#das Orakel#
+oratio#oration#dr#f#die Rede#
+orator#orator#dr#m#der Redner#
+ordo#ordin#dr#m#die Reihe, der (soziale) Stand#
+os#or#dr#n#der Mund, das Gesicht#
+parens#parent#dr#m und f#das Elternteil#
+pars#part#dr#f#der Teil, die Richtung#
+pater#patr#dr#m#der Vater#
+patria#patri#a#f#das Vaterland, die Heimat#
+patronus#patron#o#m#der Anwalt, der Sachwalter, der Patron#
+pecunia#pecuni#a#f#das Geld#
+pecus#pecor#dr#n#das Vieh (als Wort f�r die Menge)#
+pecus#pecud#dr#n#das (einzelne St�ck) Vieh#
+persona#person#a#f#die Rolle#
+philosophus#philosoph#o#m#der Philosoph#
+pietas#pietat#dr#f#das Pflichtgef�hl, die Fr�mmigkeit#
+plebs#pleb#dr#f#das (einfache) Volk#
+poena#poen#a#f#die Strafe#
+pons#pont#dr#m#die Br�cke#
+pontifex#pontific#dr#m#der Priester, der Oberpriester#
+populus#popul#o#m#das Volk (als Gesamtheit)#
+potentia#potenti#a#f#die Macht#
+potestas#potestat#dr#f#die Macht, Amtsmacht#
+praeceptum#praecept#o#n#die Vorschrift, die Lehre#
+praeda#praed#a#f#die Beute#
+praesidium#praesidi#o#n#die Besatzungstruppen, die Schutztruppen#
+praetor#praetor#dr#m#der Pr�tor (Oberrichter)#
+preces#prec#dr#f#die Bitten#Plural
+princeps#princip#dr#m#der Erste, der Anf�hrer#
+propinquus#propinqu#o#m#der Verwandte#
+provincia#provinci#a#f#die Provinz, der Herrschaftsbereich#
+prudentia#prudenti#a#f#die Klugheit#
+puella#puell#a#f#das M�dchen#
+puer#puer#o#m#der Junge, das Kind#
+quaestor#quaestor#dr#m#der Qu�stor (Finanzbeamter)#
+ratio#ration#dr#f#die Vernunft, die Berechnung, die Rechenschaft#
+reditus#us#u#m#die R�ckkehr#
+regio#region#dr#f#die Gegend#
+regnum#regn#o#n#das K�nigreich#
+religio#religion#dr#f#die Scheu, die Gottesverehrung#
+res#r#e#f#die Sache, das Eigentum, die Angelegenheit#
+res publica#rei public#a#f#der Staat#
+reus#re#o#m#der Angeklagte#
+rex#reg#dr#m#der K�nig#
+rivus#riv#o#m#der Bach#
+rusticus#rustic#o#m#der Bauer#
+sacerdos#sacerdot#dr#m und f#der Priester, die Priesterin#
+sacrificium#sacrifici#o#n#das Opfer#
+sacrum#sacr#o#n#das Heiligtum, das Opfer#
+saeculum#saecul#o#n#das Jahrhundert, das Zeitalter#
+sapiens#sapient#dr#m# der Weise#
+sapientia#sapienti#a#f#die Weisheit#
+scelus#sceler#dr#n#das Verbrechen#
+schola#schol#a#f#die Schule#
+scientia#scienti#a#f#die Kenntnis, das Wissen#
+senator#senator#dr#m#der Senator (Ratsherr)#
+senatus#us#u#m#der Senat#
+senex#sen#dr#m#der alte Mann#
+sententia#sententi#a#f#der Antrag (im Senat), die Meinung, der Satz#
+sermo#sermon#dr#m#die �u�erung, das Gespr�ch, die Sprache#
+serva#serv#a#f#die Sklavin#
+servus#serv#o#m#der Sklave#
+signum#sign#o#n#die Statue, das Zeichen#
+silentium#silenti#o#n#das Schweigen#
+silva#silv#a#f#der Wald#
+societas#societat#dr#f#die (menschliche) Gemeinschaft, das B�ndnis#
+soror#soror#dr#f#die Schwester#
+species#speci#e#f#das �u�ere, die Gestalt; auch: der Anschein#
+spes#sp#e#f#die Hoffnung#
+studium#studi#o#n#das eifrige Bestreben, der Eifer, die Vorliebe#
+superbia#superbi#a#f#der Hochmut, der Stolz#
+superi#super#o#m#die G�tter des Himmels#Plural
+supplicium#supplici#o#n#das Flehen; die harte Strafe, die Hinrichtung#
+suspicio#suspicion#dr#f#der Verdacht#
+telum#tel#o#n#das Geschoss, die Waffe#
+templum#templ#o#n#das Heiligtum#
+tempus#tempor#dr#n#die Zeit#
+terror#terror#dr#m#der Schrecken#
+testis#test#dr#m und f#der Zeuge, die Zeugin#
+timor#timor#dr#m#die Furcht, die Angst#
+tribunus#tribun#o#m#der Tribun#
+turpitudo#turpitudin#dr#f#die Verwerflichkeit, die Schlechtigkeit#
+urbs#urb#dr#f#die Stadt#
+usus#us#u#m#der Nutzen#
+utilitas#utilitat#dr#f#der Nutzen#
+uxor#uxor#dr#f#die Ehefrau#
+ver#ver#dr#n#der Fr�hling#
+verbum#verb#o#n#das Wort, die �u�erung#
+verecundia#verecundi#a#f#die Sittsamkeit, die Scheu, die Zur�ckhaltung#
+victor#victor#dr#m#der Sieger#
+vicus#vic#o#m#das Dorf, das Stadtviertel#
+villa#vill#a#f#das Landhaus, das Landgut#
+vir#vir#o#m#der Mann#
+virtus#virtut#dr#f#die Tapferkeit; die Tugend#
+vis#v#dr#f#die Macht, die Kraft, die Gewalt#
+vita#vit#a#f#das Leben#
+vitium#viti#o#n#der Fehler, das Laster, das Unrecht#
+voluntas#voluntat#dr#f#der Wille, der Wunsch, die Absicht#
+vox#voc#dr#f#die Stimme, die �u�erung#
