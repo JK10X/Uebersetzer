@@ -1,7 +1,7 @@
 # Uebersetzer
 
 This is a little repository that aims to build a solid Latin-translator.
-We saw a lack in something that knows all grammar-rules and such and has a solid vocab base.
+We saw a lack in something that knows all grammar-rules and in addition has a solid vocab base.
 
 The documentation is mostly in german, because we are from germany (duh).
 
